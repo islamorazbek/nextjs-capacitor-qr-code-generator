@@ -7,12 +7,13 @@ import Home from './Feed'
 import Lists from './Lists'
 import ListDetail from './ListDetail'
 import Settings from './Settings'
+import ItemsPage from 'pages/admin/items'
 
 const Tabs = () => {
   return (
     <IonTabs>
       <IonRouterOutlet>
-        <Route path="/tabs/solution" render={() => <Home />} exact={true} />
+        <Route path="/tabs/itemss" render={() => <ItemsPage />} exact={true} />
         <Route path="/tabs/feed" render={() => <Home />} exact={true} />
         <Route path="/tabs/lists" render={() => <Lists />} exact={true} />
         <Route path="/tabs/lists/:listId" render={() => <ListDetail />} exact={true} />
@@ -20,19 +21,19 @@ const Tabs = () => {
         <Route path="/tabs" render={() => <Redirect to="/tabs/feed" />} exact={true} />
       </IonRouterOutlet>
       <IonTabBar slot="bottom">
-        <IonTabButton tab="tab1" href="/tabs/feed">
+        <IonTabButton tab="tab1" href="/tabs/itemss">
           <IonIcon icon={flash} />
           <IonLabel>Решение</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="tab1" href="/tabs/feed">
+        <IonTabButton tab="tab2" href="/tabs/feed">
           <IonIcon icon={flash} />
           <IonLabel>Feed</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="tab2" href="/tabs/lists">
+        <IonTabButton tab="tab3" href="/tabs/lists">
           <IonIcon icon={list} />
           <IonLabel>Lists</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="tab3" href="/tabs/settings">
+        <IonTabButton tab="tab4" href="/tabs/settings">
           <IonIcon icon={cog} />
           <IonLabel>Settings</IonLabel>
         </IonTabButton>
